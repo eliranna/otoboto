@@ -34,7 +34,7 @@ const Wrapper = styled.div`
     -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0.2s !important;
     -moz-transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0.2s !important;
     transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),-webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0.2s !important;
-    z-index: 1 !important;
+    z-index: 999 !important;
     height: 125px;
     justify-content: center;
     align-items: center;
