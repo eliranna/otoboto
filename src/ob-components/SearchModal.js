@@ -208,6 +208,7 @@ const StageIndicator = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    :focus {outline:0;}
     margin-right: 15px;
     margin-left: 15px;
     //box-shadow: 0 0 0 1px rgb(0 0 0 / 4%), 0 6px 20px rgb(0 0 0 / 20%);

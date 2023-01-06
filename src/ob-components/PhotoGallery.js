@@ -91,7 +91,7 @@ const PhotoGallery = ({photos}) => {
                 renderArrowPrev={renderArrowNext}
                 renderArrowNext={renderArrowPrev}
                 >
-                {photos.map(photo => <Photo src={photo} key={photo}/>)}
+                {photos.map(photo => <img src={photo} key={photo}/>)}
             </Carousel>
         </Wrapper>
     )
