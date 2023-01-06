@@ -18,7 +18,7 @@ const LikeButton = styled.div`
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 9999;
+    z-index: 99;
     cursor: pointer;
     opacity: 1;
     //transition: opacity 0.3s ease;
