@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1 color</title>
+    <g id="1-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16,29.9486505 C16,29.9486505 23.6666667,29.9486505 39,29.9486505 L39,25.4932066 L24.9074759,25.1780197 L21.7903075,24.2510279 L17,25.4932066 C16.3333333,28.4635025 16,29.9486505 16,29.9486505 Z" id="Path-46" fill="#FFAB00"></path>
+        <g id="Group-31-Copy" transform="translate(16.000000, 20.000000)">
+            <g id="Group-14">
+                <path d="M3.42131664,9.9486505 L1,9.9486505 C0.44771525,9.9486505 0,9.50093525 0,8.9486505 L0,7.6002864 C0,6.91430898 0.0353863865,5.62350754 0.611427982,5.25102788 C0.995455712,5.0027081 2.97132209,4.60495308 6.53902711,4.05776281 C8.58389197,1.6345103 9.19662953,0 12.3673747,0 L17.9149782,0 C20.9621164,0 21.1625087,1.00292369 22,2.72245384 L22.5917817,4.88885805 C22.8604031,5.44038938 23,6.04581546 23,6.65928453 L23,8.9486505 C23,9.50093525 22.5522847,9.9486505 22,9.9486505 C21.4749752,9.9486505 21.08806,9.9486505 20.8392546,9.9486505" id="Path" stroke="#000000" stroke-width="1.2" stroke-linejoin="round"></path>
+                <path d="M15.4135573,9.9486505 C14.3024462,9.9486505 13.3852812,9.9486505 11.163059,9.9486505" id="Path" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <ellipse id="Oval-Copy-6" fill="#FFFFFF" cx="5.53902711" cy="10.500064" rx="2.53902711" ry="2.5"></ellipse>
+                <ellipse id="Oval-Copy-10" fill="#FFFFFF" cx="17.5390271" cy="10.500064" rx="2.53902711" ry="2.5"></ellipse>
+                <ellipse id="Oval" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="5.79030749" cy="10.5129174" rx="2.52597307" ry="2.48714661"></ellipse>
+                <ellipse id="Oval-Copy" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="17.9149782" cy="10.5129174" rx="2.52597307" ry="2.48714661"></ellipse>
+                <polyline id="Line" stroke="#000000" stroke-width="1.2" stroke-linecap="square" points="6.75096548 4.25102788 9.07805421 4.97432525 21.9846945 4.97432525"></polyline>
+                <line x1="16.1738002" y1="4.25102788" x2="16.1738002" y2="0.650306497" id="Line-Copy-6" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+            </g>
+            <line x1="12.5122211" y1="7.23574258" x2="13.5122211" y2="7.23574258" id="Line-5" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>7</title>
+    <g id="7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-25-Copy" transform="translate(11.000000, 17.000000)">
+            <g id="Group-13">
+                <g id="Group-16-Copy">
+                    <path d="M20.3861074,17.8333333 L14,17.8333333 M3.67821736,17.8333333 L1,17.8333333 C0.44771525,17.8333333 0,17.3856181 0,16.8333333 L0,14.2601375 L0,12.8456754 C0,11.8809288 0.688701609,11.0536842 1.63746614,10.8788075 L6.51496864,9.97978436 L9.01882727,5.49118964 C9.64636557,4.01440981 11.0956526,3.05555556 12.7002345,3.05555556 L28.3340333,3 C29.4386028,3 30.3340333,3.8954305 30.3340333,5 L30.3340333,14.8195924 L30.3340333,16.8333333 C30.3340333,17.3856181 29.8863181,17.8333333 29.3340333,17.8333333" id="Shape" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <ellipse id="Oval-Copy-6" fill="#FFFFFF" cx="7.55463795" cy="17.5" rx="3.55463795" ry="3.5"></ellipse>
+                    <ellipse id="Oval-Copy-11" fill="#FFFFFF" cx="23.5546379" cy="17.5" rx="3.55463795" ry="3.5"></ellipse>
+                    <line x1="7.17055153" y1="9.91666667" x2="29.4679546" y2="9.91666667" id="Line" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+                    <line x1="17.3363638" y1="3.05555556" x2="17.3363638" y2="16.7777778" id="Line-Copy-2" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+                    <line x1="16.3363638" y1="0.777777778" x2="16.3363638" y2="2.46157002" id="Line-Copy-3" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+                    <line x1="26.3363638" y1="0.777777778" x2="26.3363638" y2="2.46157002" id="Line-Copy-4" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+                    <line x1="14.5195056" y1="0.5" x2="27.840784" y2="0.5" id="Line-Copy-5" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></line>
+                    <path d="M30.3340333,7.05533864 L32.383777,7.05533864 C32.9360617,7.05533864 33.383777,7.50305389 33.383777,8.05533864 L33.383777,13.4442275 C33.383777,13.9965123 32.9360617,14.4442275 32.383777,14.4442275 L30.3340333,14.4442275 L30.3340333,14.4442275 L30.3340333,7.05533864 Z" id="Rectangle" stroke="#000000" stroke-width="1.2" stroke-linejoin="round"></path>
+                    <circle id="Oval-Copy" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="7.62080786" cy="17.1111111" r="3.5"></circle>
+                    <circle id="Oval-Copy-2" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="23.8861074" cy="17.1111111" r="3.5"></circle>
+                </g>
+                <line x1="13" y1="12.5" x2="15" y2="12.5" id="Line-5" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+            <line x1="27.5" y1="9.5" x2="27.5" y2="3.5" id="Line-7" stroke="#000000" stroke-width="1.2" stroke-linecap="square"></line>
+            <polyline id="Path-29" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="0.652532876 13 4.20631332 12.2101683 3.32099682 10.7777778"></polyline>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8 color</title>
+    <g id="8-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path-51" fill="#FFAB00" points="7.53233482 33 15.7776404 34.0834136 48.2763219 33.6373675 48.2865044 24.3271243 29.5 24.3271243 14.646922 24.3271243 9.34372804 26.2998633 7.53233482 30"></polygon>
+        <g id="Group-22-Copy" transform="translate(7.000000, 19.000000)">
+            <ellipse id="Oval-Copy-6" fill="#FFFFFF" cx="7.04683253" cy="14" rx="3.04683253" ry="3"></ellipse>
+            <ellipse id="Oval-Copy-15" fill="#FFFFFF" cx="32.0468325" cy="14" rx="3.04683253" ry="3"></ellipse>
+            <path d="M22.5,12 L30.005512,12 M34.3831085,12 L41.5,12" id="Shape" stroke="#000000" stroke-width="1.2" stroke-linejoin="round"></path>
+            <path d="M4.04868972,14.3142339 L1.15099505,14.089333 C0.600366273,14.0465967 0.188638109,13.5655792 0.231374456,13.0149504 C0.235068098,12.9673603 0.242164433,12.9200958 0.25260903,12.8735193 L1.09027634,9.1380392 C1.42959066,7.62490637 2.61289715,6.44422934 4.12678107,6.10828197 L7.646922,5.32712426 L7.646922,5.32712426 L40.2971814,5.67575182 C40.8452698,5.68160411 41.2865044,6.12757519 41.2865044,6.67569482 L41.2865044,13.6373675 C41.2865044,14.1896522 40.8387891,14.6373675 40.2865044,14.6373675 L37.8348064,14.6373675 L37.8348064,14.6373675 M28.8512408,14.5294597 L12.7148882,14.6373675" id="Shape" stroke="#000000" stroke-width="1.2" stroke-linecap="round"></path>
+            <path d="M22.4620871,14 L22.4620871,1 C22.4620871,0.44771525 22.0143719,-1.01453063e-16 21.4620871,0 L16.1006092,0 C15.2370306,1.586368e-16 14.3966427,0.279480401 13.7050602,0.796666557 L7.646922,5.32712426 L7.646922,5.32712426" id="Path-31" stroke="#000000" stroke-width="1.2" stroke-linecap="round"></path>
+            <polyline id="Path-32" stroke="#000000" stroke-width="1.2" stroke-linecap="round" points="15.336538 0.599726596 13.6475939 9.27431581 14.7703645 14"></polyline>
+            <polyline id="Path-33" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" points="36.944746 5.78194622 38.1054427 8.05351003 41.2763219 8.05351003"></polyline>
+            <ellipse id="Oval-Copy-14" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="7.04683253" cy="14" rx="3.04683253" ry="3"></ellipse>
+            <ellipse id="Oval-Copy-3" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" cx="32.0468325" cy="14" rx="3.04683253" ry="3"></ellipse>
+            <line x1="18" y1="8.5" x2="20" y2="8.5" id="Line-5" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>
