@@ -76,6 +76,9 @@ const Img = styled.img`
     height: 100%;
     aspect-ratio: 20 / 19;
     border-radius: 15px;
+    @media (max-width: 550px) {
+        height: calc (100vw * 0.815416667) !important;
+    }
 `
 
 const renderArrowPrev = (clickHandler, hasPrev, label) => {
