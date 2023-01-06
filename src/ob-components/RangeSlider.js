@@ -6,6 +6,7 @@ const AirbnbSlider = styled(Slider)(({ theme }) => ({
   color: '#FF385C',
   height: 3,
   padding: '13px 0',
+  userSelect: 'none',
   '& .MuiSlider-thumb': {
     height: 27,
     width: 27,

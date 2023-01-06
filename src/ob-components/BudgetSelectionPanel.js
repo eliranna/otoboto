@@ -9,6 +9,7 @@ import Spacer from './Spacer'
 const Wrapper = styled.div`
     text-align: right;
     width: 100%;
+    user-select: none; 
 `
 
 const RangeSliderPanel = styled.div`
@@ -42,6 +43,7 @@ const ClearButton = styled.div`
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
+    user-select: none; 
 `
 
 const Comment = styled.div`
