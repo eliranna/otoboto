@@ -29,7 +29,7 @@ function Otoboto() {
   return (
     <ViewportProvider>
       <Wrapper>
-          <Topbar allowSearch={isInSearchMode} isVisibleOnMobile={isInSearchMode} searchParams={searchParams} onSearchParamsUpdate={searchParams => setSearchParams(searchParams)} onSearch={handleSearch}/>
+          <Topbar allowSearch={isInSearchMode} isVisibleOnMobile={isInSearchMode} searchParams={searchParams} onSearchParamsUpdate={searchParams => {console.log(searchParams); setSearchParams(searchParams)}} onSearch={handleSearch}/>
           <Routes>
               <Route path="/" element={<Explore />}/>
               <Route path="/liked" element={<Liked />}/>

@@ -65,7 +65,9 @@ const Photo = styled.div`
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
     aspect-ratio: 20 / 19;
+    height: auto; 
     border-radius: 15px;
 `
 
@@ -89,7 +91,7 @@ const PhotoGallery = ({photos}) => {
                 renderArrowPrev={renderArrowNext}
                 renderArrowNext={renderArrowPrev}
                 >
-                {photos.map(photo => <Photo src={photo}/>)}
+                {photos.map(photo => <Photo src={photo} key={photo}/>)}
             </Carousel>
         </Wrapper>
     )

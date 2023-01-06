@@ -240,6 +240,7 @@ const DesktopSearch = ({searchParams, onSearchParamsUpdate, onSearch}) => {
     }
 
     const updateBudgetSelection = (budget) => {
+        console.log('here')
         onSearchParamsUpdate({...searchParams, budget})
     }
 

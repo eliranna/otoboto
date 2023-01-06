@@ -45,6 +45,13 @@ function AirbnbThumbComponent(props) {
 }
 
 const RangeSlider = ({max, min, defaultValue, value, valueLabelFormat, onValueChange}) => {
+
+    const [sliderValue, setSliderValue] = useState(value)
+
+    useEffect(() => {
+      setSliderValue(value)
+    }, [value])
+
     const marks = [
       {
         value: 5,
@@ -60,13 +67,14 @@ const RangeSlider = ({max, min, defaultValue, value, valueLabelFormat, onValueCh
             slots={{ thumb: AirbnbThumbComponent }}
             getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
             defaultValue={defaultValue}
-            value={value}
+            value={sliderValue}
             valueLabelDisplay="auto"
             max={max}
             min={min}
             marks={marks}
             valueLabelFormat={valueLabelFormat}
-            onChange={onValueChange}
+            onChange={(e)=>setSliderValue(e.target.value)}
+            onChangeCommitted={(e, value) => {onValueChange(value)}}
         />
     )
 }
