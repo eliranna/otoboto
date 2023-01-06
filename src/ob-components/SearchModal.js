@@ -202,6 +202,9 @@ const LocationInput = styled.input`
     font-size: 16px;
     font-weight: 600;
     width: 100%;
+    :focus {
+        outline:0;
+    }
 `
 
 const StageIndicator = styled.div`

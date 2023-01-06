@@ -71,6 +71,13 @@ const Photo = styled.div`
     border-radius: 15px;
 `
 
+const Img = styled.img`
+    object-fit: cover;
+    height: 100%;
+    aspect-ratio: 20 / 19;
+    border-radius: 15px;
+`
+
 const renderArrowPrev = (clickHandler, hasPrev, label) => {
     return hasPrev ? <ArrowRight onClick={clickHandler}><KeyboardArrowRightIcon/></ArrowRight> : null;
 }
@@ -91,7 +98,7 @@ const PhotoGallery = ({photos}) => {
                 renderArrowPrev={renderArrowNext}
                 renderArrowNext={renderArrowPrev}
                 >
-                {photos.map(photo => <img src={photo} key={photo}/>)}
+                {photos.map(photo => <Img src={photo} key={photo}/>)}
             </Carousel>
         </Wrapper>
     )

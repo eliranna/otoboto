@@ -20,17 +20,17 @@ const LikeButton = styled.div`
     right: 10px;
     z-index: 9999;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1;
+    //transition: opacity 0.3s ease;
 `;
 
 const Wrapper = styled.div`
     position: relative; 
     cursor: pointer;
-    &:hover ${LikeButton} {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
+    //&:hover ${LikeButton} {
+    //    opacity: 1;
+    //    transition: opacity 0.3s ease;
+    //}
 `;
 
 const PhotoGallerySection = styled.div`

@@ -48,6 +48,8 @@ const NavItem = styled.div`
     justify-content: center;
     align-items: center;
     user-select: none;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
     a {
         text-decoration: none;
     }
