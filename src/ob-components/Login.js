@@ -21,8 +21,9 @@ const Welcome = styled.div`
 
 const Logo = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     img {
         width: 70px;
     }
