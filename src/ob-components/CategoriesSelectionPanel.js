@@ -22,6 +22,9 @@ const Category = styled.div`
     margin-left: 15px;
     width: 60px;
     cursor: pointer;
+    :focus {
+        outline: 0;
+    }
 `
 
 const CategoryImage = styled.div`
