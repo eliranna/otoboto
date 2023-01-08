@@ -21,14 +21,10 @@ const Wrapper = styled.div`
     @keyframes inAnimation {
       0% {
         opacity: 0;
-        transform: scale(0);
-        transform-origin: top right;
         visibility: hidden;
       }
       100% {
         opacity: 1;
-        transform: scale(1);
-        transform-origin: top right;
         visibility: visible;
       }
     }
@@ -86,8 +82,8 @@ const BubblePanel = ({children, onClickOutside, show, width, xloc, left}) => {
       };
     }, [ onClickOutside ]);
   
-    //if(!show)
-      //return null;
+    if(!show)
+      return null;
 
     return (
         <Wrapper ref={ref} width={width} xloc={xloc} left={left} style={show ? mountedStyle : unmountedStyle}>
