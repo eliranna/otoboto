@@ -86,6 +86,7 @@ const Rank = styled.div`
     font-weight: 700;
     img {
         width: 25px;
+        height: 25px;
     }
 `;
 
