@@ -103,7 +103,7 @@ const Login = () => {
         <Wrapper>
             <Welcome>
                 <Logo>
-                    <img src="/assets/otoboto/logo.svg"/>
+    
                 </Logo>
                 <WelcomeCaption>
                     כיף לראות אתכם באוטובוטו

@@ -98,7 +98,7 @@ const RowUpper = styled.div`
 const logoSection = (
     <Link to={'/'}>
         <LogoSection>
-            <img src="/assets/otoboto/logo.svg"/>
+            
         </LogoSection>  
     </Link>  
 )
