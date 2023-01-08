@@ -22,6 +22,7 @@ const Category = styled.div`
     margin-left: 15px;
     width: 60px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important;
     :focus {
         outline: 0;
     }

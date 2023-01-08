@@ -18,6 +18,31 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     z-index: 99999;
+    @keyframes inAnimation {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: top right;
+        visibility: hidden;
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: top right;
+        visibility: visible;
+      }
+    }
+    
+    @keyframes outAnimation {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
     :before {
         content: "";
         position: absolute;
@@ -36,6 +61,14 @@ const Wrapper = styled.div`
     }
 `
 
+const mountedStyle = { 
+  animation: "inAnimation 150ms ease-in" 
+};
+
+const unmountedStyle = {
+  animation: "outAnimation 270ms ease-out",
+  animationFillMode: "forwards"
+};
 
 const BubblePanel = ({children, onClickOutside, show, width, xloc, left}) => {
 
@@ -53,11 +86,11 @@ const BubblePanel = ({children, onClickOutside, show, width, xloc, left}) => {
       };
     }, [ onClickOutside ]);
   
-    if(!show)
-      return null;
+    //if(!show)
+      //return null;
 
     return (
-        <Wrapper ref={ref} width={width} xloc={xloc} left={left}>
+        <Wrapper ref={ref} width={width} xloc={xloc} left={left} style={show ? mountedStyle : unmountedStyle}>
             {children}
         </Wrapper>
     )

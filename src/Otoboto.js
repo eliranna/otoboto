@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import styled from "styled-components/macro"
 import { useLocation } from 'react-router-dom'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {useViewport, ViewportProvider} from './ViewportProvider'
 
@@ -26,17 +27,36 @@ function Otoboto() {
     console.log(searchParams)
   }
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#222222',
+      },
+      secondary: {
+        main: '#717171',
+      },
+      accent: {
+        main: '#FF385C'
+      },
+      success: {
+        main: '#2bc48a'
+      }
+    }
+  });
+
   return (
     <ViewportProvider>
-      <Wrapper>
-          <Topbar allowSearch={isInSearchMode} isVisibleOnMobile={isInSearchMode} searchParams={searchParams} onSearchParamsUpdate={searchParams => {console.log(searchParams); setSearchParams(searchParams)}} onSearch={handleSearch}/>
-          <Routes>
-              <Route path="/" element={<Explore />}/>
-              <Route path="/liked" element={<Liked />}/>
-              <Route path="/profile" element={<Profile user={user}/>}/>
-          </Routes>
-          <MobileFooter/>
-      </Wrapper>
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+            <Topbar allowSearch={isInSearchMode} isVisibleOnMobile={isInSearchMode} searchParams={searchParams} onSearchParamsUpdate={searchParams => {console.log(searchParams); setSearchParams(searchParams)}} onSearch={handleSearch}/>
+            <Routes>
+                <Route path="/" element={<Explore />}/>
+                <Route path="/liked" element={<Liked />}/>
+                <Route path="/profile" element={<Profile user={user}/>}/>
+            </Routes>
+            <MobileFooter/>
+        </Wrapper>
+      </ThemeProvider>
     </ViewportProvider>
   )
 }
