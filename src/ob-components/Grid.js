@@ -8,15 +8,19 @@ const Wrapper = styled.div`
     gap: 40px 24px;
     @media (min-width: 550px) {
         grid-template-columns: auto auto; 
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }  
     @media (min-width: 950px) {
         grid-template-columns: auto auto auto; 
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }  
     @media (min-width: 1128px) {
         grid-template-columns: auto auto auto auto; 
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     } 
     @media (min-width: 1640px) {
         grid-template-columns: auto auto auto auto auto; 
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }    
 `;
 

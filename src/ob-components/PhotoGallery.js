@@ -54,22 +54,17 @@ const Wrapper = styled.div`
         height: 6px;
         margin: 0 4px;
     }
-
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    :hover {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
     &:hover ${Arrow} {
         opacity: 1;
         transition: opacity 0.3s ease;
     }
 `;
-
-const Photo = styled.div`
-    background-image: url(${props => props.src});
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    aspect-ratio: 20 / 19;
-    height: auto; 
-    border-radius: 15px;
-`
 
 const Img = styled.img`
     object-fit: cover;

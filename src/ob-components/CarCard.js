@@ -75,20 +75,33 @@ const CarModel = styled.div`
     color: #222222;
     font-weight: 700;
     direction: rtl; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
 `;
 
 const Rank = styled.div`
     position: absolute; 
-    top: 5px;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+`;
+
+const Score = styled.div`
     font-size: 15px;
     line-height: 19px;
     color: white;
-    font-weight: 700;
-    img {
-        width: 25px;
-        height: 25px;
-    }
+    font-weight: 600;
+    background-color: #FF385C;
+    border-radius: 5px;
+    padding: 0px 5px;
 `;
+
+const Insight = styled.div`
+    direction: rtl;
+`
 
 const SubModel = styled.div`
     font-size: 15px;
@@ -129,22 +142,24 @@ const Usage = styled.div`
 
 const Hand = styled.div`
     direction: rtl; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 `;
 
 const Millage = styled.div`
     direction: rtl; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
 `;
 
 const Location = styled.div`
     display: flex;
     flex-direction: row;
+    direction: rtl;
     font-size: 15px;
-    direction: rtl; 
-    color: #222222;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    color: #717171;
 `;
 
 /*
@@ -169,7 +184,40 @@ const IndicatorBox = styled.div`
     align-items: center;
 `;
 
-const CarCard = () => {
+const HAND_CAPTION = [
+    'ראשונה',
+    'שנייה',
+    'שלישית',
+    'רביעית',
+    'חמישית',
+    'שישית',
+    'שביעית',
+    'שמינית',
+    'תשיעית',
+    'עשירית ומעלה'
+]
+
+const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, images, indicators}) => {
+
+    const computeMileageCaption = (mileage) => {
+        return mileage >= 1000 ? (
+            <>
+                <span>{mileage.slice(0, -3)}</span>
+                <Spacer width={'5px'}/>
+                <span>אלף ק״מ</span>
+            </>
+        ) : (
+            <>
+                <span>{mileage}</span>
+                <Spacer width={'5px'}/>
+                <span>ק״מ</span>
+            </>
+        )
+    }
+
+    const computeHandCaption = (hand) => {
+        return HAND_CAPTION[hand]
+    }
 
     return (
         <Wrapper>
@@ -180,59 +228,76 @@ const CarCard = () => {
                 </LikeButtonInner>
             </LikeButton>
             <PhotoGallerySection>
-                <PhotoGallery photos={PHOTOS}/>
+                <PhotoGallery photos={images}/>
             </PhotoGallerySection>
             <Spacer height={spacing.spacing3}/>
            <InfoSection>
                <Row>
                     <CarModel>
-                        ניסאן קשקאי 2018
+                        <span>{manifacturer}</span>
+                        <Spacer width={"5px"}/>
+                        <span>{model}</span>
+                        <Spacer width={"5px"}/>
+                        <span>{year}</span>
                     </CarModel>
                     <Spacer width={'12px'}/> 
                     <IndicatorBox>
-                       <Indicator icon={<VerifiedUserOutlinedIcon/>} label={"בטיחותי"} color={"#79589F"}/>
+                        {true && indicators && indicators.find(indicator => indicator.code === 'SAFTEY') && 
+                            (<Indicator icon={<VerifiedUserOutlinedIcon/>} label={"בטיחותי"} color={"#79589F"}/>)}
                     </IndicatorBox>
                 </Row>
                <Spacer height={spacing.spacing1}/>
                <Row>
                    <SubModel>
-                        Acenta אוט' 1.2 (115 כ''ס)
+                        <span>{submodel}</span>
                    </SubModel>
                    <Spacer width={'12px'}/> 
                     <IndicatorBox>
-                       <Indicator icon={<SettingsSuggestOutlinedIcon/>} label={"עוצמתי"} color={"#042759"}/>
+                       {false && indicators && indicators.find(indicator => indicator.code === 'POWERFULL') && 
+                            (<Indicator icon={<SettingsSuggestOutlinedIcon/>} label={"עוצמתי"} color={"#042759"}/>)}
                     </IndicatorBox>                   
                </Row>
                <Usage>
-                   <Hand>יד ראשונה</Hand>, 
+                   <Hand>
+                       <span>יד</span>
+                       <Spacer width={'5px'}/>
+                       <span>{computeHandCaption(hand)}</span>
+                   </Hand>, 
                    <Spacer width={'3px'}/>
-                   <Millage>20 אלף ק״מ</Millage>
+                   <Millage>{computeMileageCaption(mileage)}</Millage>
                    <Spacer width={'10px'}/>
                    <IndicatorBox>
-                       <Indicator icon={<img src={"/assets/otoboto/sparkling.png"}/>} label={"כמו חדש"} color={"#2bc48a"}/>
+                       {false && indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && 
+                            (<Indicator icon={<img src={"/assets/otoboto/sparkling.png"}/>} label={"כמו חדש"} color={"#2bc48a"}/>)}
                     </IndicatorBox>
                </Usage>
-               <Spacer height={spacing.spacing2}/>
+               
+               <Location>
+                   <span>{location}</span>
+                </Location>
+                <Spacer height={spacing.spacing2}/>
                <Row>
                     <Price>
                         165,000 ₪ 
                     </Price>
                     <Spacer width={'10px'}/> 
-                    <Downprice>
-                        <KeyboardDoubleArrowDownIcon fontSize={'small'} sx={{color: '#2bc48a'}}/>
-                        <span>14%</span>
-                    </Downprice>                     
+                    {true && indicators && indicators.find(indicator => indicator.code === 'DOWN_PRICE') && (
+                        <Downprice>
+                            <KeyboardDoubleArrowDownIcon fontSize={'small'} sx={{color: '#2bc48a'}}/>
+                            <span>14%</span>
+                        </Downprice> 
+                    )}
                 </Row>
                 <Rank>
-                    <Badge badgeContent={"5.0"} color={"accent"}>
-                        <img src={"/assets/otoboto/chatbot.png"}/>
-                    </Badge>                            
-                </Rank>  
-                <Location>
-                    <LocationOnIcon sx={{fontSize: '15px'}} color={'primary'}/> 
-                    <Spacer width={'1px'}/> 
-                    <span>רמת גן</span>
-                </Location>                                
+                    <Score>
+                        4.8
+                    </Score>
+                    <Spacer width={'10px'}/>
+                    <Insight>
+                        {indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && 
+                                (<Indicator icon={<img src={"/assets/otoboto/sparkling.png"}/>} label={"כמו חדש"} color={"#2bc48a"}/>)}
+                    </Insight>                         
+                </Rank>                               
            </InfoSection>
         </Wrapper>
     )

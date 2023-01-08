@@ -13,6 +13,8 @@ import Explore from './ob-pages/Explore'
 import Liked from './ob-pages/Liked';
 import Profile from './ob-pages/Profile';
 
+import MOCK_DATA from './mockData'
+
 const Wrapper = styled.div``
 
 function Otoboto() {
@@ -50,7 +52,7 @@ function Otoboto() {
         <Wrapper>
             <Topbar allowSearch={isInSearchMode} isVisibleOnMobile={isInSearchMode} searchParams={searchParams} onSearchParamsUpdate={searchParams => {console.log(searchParams); setSearchParams(searchParams)}} onSearch={handleSearch}/>
             <Routes>
-                <Route path="/" element={<Explore />}/>
+                <Route path="/" element={<Explore cars={MOCK_DATA}/>}/>
                 <Route path="/liked" element={<Liked />}/>
                 <Route path="/profile" element={<Profile user={user}/>}/>
             </Routes>
