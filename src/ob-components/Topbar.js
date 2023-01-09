@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-import { maxWidth, padding } from '../ob-style';
+import { maxWidth, padding, spacing } from '../ob-style';
 import {useViewport} from '../ViewportProvider';
 
 import DesktopSearch from './DesktopSearch';
 import MobileSearch from './MobileSearch';
 import UserMenu from './UserMenu';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Spacer from './Spacer';
 
 const DesktopTopbarWrapper = styled.div`
     width: 100%;
@@ -54,6 +56,16 @@ const LogoSection = styled.div`
 const SearchSection = styled.div`
     min-width: 348px;
     padding: 0 24px;
+    display: flex; 
+    justify-content: center;
+    @media (min-width: 950px) {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 641px;
+    } 
 `
 
 const UserSection = styled.div`
@@ -61,6 +73,9 @@ const UserSection = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    a {
+        color: inherit!important;
+    }
 `
 
 const TabletTopbarWrapper = styled.div`
@@ -95,6 +110,37 @@ const RowUpper = styled.div`
     }
 `
 
+const FavButton = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`
+
+const FiltersButton = styled.div`
+    border: 1px solid #dddddd;
+    border-radius: 25px;
+    margin: 0px;
+    margin-left: 28px;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    align-self: center;
+    img {
+        display: block;
+        height: 16px;
+        width: 16px;
+        fill: #222222;
+    }
+`
+
 const logoSection = (
     <Link to={'/'}>
         <LogoSection>
@@ -103,8 +149,18 @@ const logoSection = (
     </Link>  
 )
 
+const iconStyle = (isActive) => { return isActive ? {color: 'rgb(255, 56, 92)'} : {color: 'rgb(176, 176, 176)'} }
+
 const userSection = (
     <UserSection>
+        <NavLink to={'/liked'}>
+        {({ isActive }) => (
+            <FavButton>
+                <FavoriteBorderIcon sx={iconStyle(isActive)}/>
+            </FavButton>
+        )}
+        </NavLink>
+        <Spacer width={spacing.spacing6}/>
         <UserMenu/>
     </UserSection> 
 )
@@ -124,6 +180,9 @@ const Topbar = ({searchParams, onSearchParamsUpdate, onSearch, allowSearch, isVi
             <DesktopWrapper>
                 {logoSection}
                 <SearchSection>
+                    {allowSearch && (<FiltersButton>
+                        <img src="/assets/otoboto/filters.svg"/>
+                    </FiltersButton>)}
                     {allowSearch && (<DesktopSearch {...props}/>)}
                 </SearchSection> 
                 {userSection}     

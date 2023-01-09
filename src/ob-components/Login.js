@@ -66,6 +66,7 @@ const LoginButton = styled.div`
     cursor: pointer;
     transition: box-shadow 0.2s ease,transform 0.1s ease;
     direction: rtl;
+    height: 52px;
     :hover {
         border-color: transparent;
         box-shadow: 0 0 0 2px black;
