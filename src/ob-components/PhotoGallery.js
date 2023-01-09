@@ -72,7 +72,7 @@ const Img = styled.img`
     aspect-ratio: 20 / 19;
     border-radius: 15px;
     @media (max-width: 550px) {
-        height: calc (100vw * 0.815416667) !important;
+        height: calc(100vw * 0.815416667) !important;
     }
 `
 
