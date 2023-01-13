@@ -32,7 +32,7 @@ const SwipeableEdgeDrawer = ({children, isOpen, onOpen, onClose}) => {
         onClose={onClose}
         onOpen={onOpen}
         swipeAreaWidth={drawerBleeding}
-        disableSwipeToOpen={false}
+        disableSwipeToOpen={true}
         ModalProps={{
           keepMounted: true,
         }}
