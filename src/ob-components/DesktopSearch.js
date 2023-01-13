@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 import styled from "styled-components/macro"
 
-import { maxWidth, fontSize, spacing } from '../ob-style';
+import { colors, fontSize, spacing } from '../ob-style';
 import {useViewport} from '../ViewportProvider';
 
 import BubblePanel from './BubblePanel';
@@ -72,7 +72,7 @@ const Seperator = styled.div`
 `
 
 const SearchButton = styled.div`
-    background-color: #FF385C;
+    background-color: ${colors.accent};
     margin: 7px 0 7px 7px;
     border-radius: 50%;
     padding: 16px;
@@ -85,7 +85,7 @@ const SearchButton = styled.div`
     align-items: center;
     display: flex;
     :hover {
-        background-color: #E00B41;
+        background-color: #00c5cc;
     }
     img {
         display: block;

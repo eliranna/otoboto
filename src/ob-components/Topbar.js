@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-import { maxWidth, padding, spacing } from '../ob-style';
+import { maxWidth, padding, spacing, colors } from '../ob-style';
 import {useViewport} from '../ViewportProvider';
 
 import DesktopSearch from './DesktopSearch';
@@ -149,20 +149,20 @@ const logoSection = (
     </Link>  
 )
 
-const iconStyle = (isActive) => { return isActive ? {color: 'rgb(255, 56, 92)'} : {color: 'rgb(176, 176, 176)'} }
+const iconStyle = (isActive) => { return isActive ? {color: colors.accent} : {color: 'rgb(176, 176, 176)'} }
 
 const userSection = (
-    <UserSection>
-        <NavLink to={'/liked'}>
-        {({ isActive }) => (
-            <FavButton>
-                <FavoriteBorderIcon sx={iconStyle(isActive)}/>
-            </FavButton>
-        )}
-        </NavLink>
-        <Spacer width={spacing.spacing6}/>
-        <UserMenu/>
-    </UserSection> 
+        <UserSection>
+            <NavLink to={'/liked'}>
+            {({ isActive }) => (
+                <FavButton>
+                    <FavoriteBorderIcon sx={iconStyle(isActive)}/>
+                </FavButton>
+            )}
+            </NavLink>
+            <Spacer width={spacing.spacing6}/>
+            <UserMenu/>
+        </UserSection> 
 )
 
 const Topbar = ({searchParams, onSearchParamsUpdate, onSearch, allowSearch, isVisibleOnMobile}) => {

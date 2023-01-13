@@ -5,6 +5,8 @@ import Page from '../ob-components/Page'
 import CarCard from '../ob-components/CarCard'
 import Grid from '../ob-components/Grid'
 
+import { useStore, StoreProvider } from '../Store'
+
 const EmptyBlockWrapper = styled.div`
     width: 100%;
     height: 100%;
@@ -17,19 +19,23 @@ const EmptyBlock = () => {
     )
 }
 
-const Explore = ({cars}) => {
+const Explore = ({cars, onLiked}) => {
+
+    const { openUserMenu } = useStore()
+
+    const handleLiked = () => {
+        openUserMenu(true)
+    }
 
     let arr = cars;
     if (cars.length < 10) {
         arr = cars.concat(Array(10 - cars.length).fill(null))
     }
 
-    console.log(arr)
-
     return (
         <Page>
             <Grid>
-                {arr.map(carInfo => carInfo != null ? <CarCard {...carInfo}/> : <EmptyBlock/> )}
+                {arr.map(carInfo => carInfo != null ? <CarCard {...carInfo} onLiked={handleLiked}/> : <EmptyBlock/> )}
             </Grid>
         </Page>
     )

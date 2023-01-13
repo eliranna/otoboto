@@ -43,10 +43,15 @@ const fontSize = {
     fontSize7: '2.986rem'
 }
 
+const colors = {
+    accent: '#00ccad'
+}
+
 export {
     maxWidth,
     breakpoints,
     spacing,
     fontSize,
-    padding
+    padding,
+    colors
 }

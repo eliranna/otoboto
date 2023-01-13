@@ -29,3 +29,8 @@ input {
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif; 
 }
+
+.css-9emuhu-MuiPaper-root-MuiDrawer-paper {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}

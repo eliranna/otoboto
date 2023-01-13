@@ -3,7 +3,7 @@ import styled from "styled-components/macro"
 import {Carousel} from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { maxWidth, fontSize, spacing } from '../ob-style'
+import { colors, spacing } from '../ob-style'
 import CategoriesSelectionPanel from './CategoriesSelectionPanel'
 import BudgetSelectionPanel from './BudgetSelectionPanel'
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
@@ -117,7 +117,7 @@ const FullButton = styled.div`
     transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
     -webkit-tap-highlight-color: transparent !important;
     border: none !important;
-    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+    background: linear-gradient(to right, ${colors.accent} 0%, ${colors.accent} 50%, #00c3bf 100%) !important;
     color: rgb(255, 255, 255) !important;
     height: 46px;
 `
@@ -233,7 +233,7 @@ const StageIndicatorWithIcon = ({label, icon, onClickHandler, isSelected, index}
     return (
         <StageIndicatorWrapper>
             <StageIndicator
-            style={{border: isSelected ? '2px solid #FF385C' : '1px solid #dddddd'}}
+            style={{border: isSelected ? `2px solid ${colors.accent}` : '1px solid #dddddd'}}
             onClick={onClickHandler}
             onKeyDown={onClickHandler}
             value={index}

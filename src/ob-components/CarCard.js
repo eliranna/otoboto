@@ -1,15 +1,24 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-import { maxWidth, padding, spacing } from '../ob-style'
+import { maxWidth, colors, spacing } from '../ob-style'
 import { useViewport } from '../ViewportProvider'
 import PhotoGallery from './PhotoGallery';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import GradeIcon from '@mui/icons-material/Grade';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Badge from '@mui/material/Badge';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import CribIcon from '@mui/icons-material/Crib';
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import ChildCareIcon from '@mui/icons-material/ChildCare';
+import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
+import AirlineSeatReclineExtraIcon from '@mui/icons-material/AirlineSeatReclineExtra';
+import ShieldIcon from '@mui/icons-material/Shield';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import Spacer from './Spacer'
 import Indicator from './Indicator';
 
@@ -90,17 +99,46 @@ const Rank = styled.div`
 `;
 
 const Score = styled.div`
-    font-size: 15px;
-    line-height: 19px;
+    border-radius: 5.8px 5.8px 0 5.8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: ${colors.accent};
     color: white;
-    font-weight: 600;
-    background-color: #FF385C;
-    border-radius: 5px;
-    padding: 0px 5px;
+    font-weight: 700;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    min-width: 32px;
+    vertical-align: baseline;
+    width: 32px;
 `;
 
 const Insight = styled.div`
     direction: rtl;
+    //position: absolute;
+    //left: 0px; 
+    color: ${colors.accent};
+    //background-color: white;
+    //border: 1px solid ${colors.accent};
+    border-radius: 5px;
+    font-size: 12px;
+    //top: 45px;
+    white-space: nowrap;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+`
+
+const InsightInner = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; 
+    align-items: center;
 `
 
 const SubModel = styled.div`
@@ -125,7 +163,7 @@ const Downprice = styled.div`
     span {
         font-size: 15px;
         line-height: 19px;
-        color: #2bc48a;
+        color: ${colors.accent};
         font-weight: 700;
         direction: rtl;         
     }
@@ -184,6 +222,19 @@ const IndicatorBox = styled.div`
     align-items: center;
 `;
 
+const BotIcon = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+    margin-top: 1px;
+    img {
+        width: 15px;
+        align-self: center;
+    }
+`
+
 const HAND_CAPTION = [
     'ראשונה',
     'שנייה',
@@ -197,7 +248,7 @@ const HAND_CAPTION = [
     'עשירית ומעלה'
 ]
 
-const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, images, indicators}) => {
+const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, images, indicators, isLiked, onLiked}) => {
 
     const computeMileageCaption = (mileage) => {
         return mileage >= 1000 ? (
@@ -219,11 +270,21 @@ const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, 
         return HAND_CAPTION[hand]
     }
 
+    isLiked = false;
+
+    const likedButtonStyle = {
+        position: 'absolute',
+        top: '5px', 
+        right: '5px', 
+        fontSize: '26px',
+        color: isLiked ? colors.accent : 'rgba(0,0,0,0.3)'
+    }
+
     return (
         <Wrapper>
-            <LikeButton>
+            <LikeButton onClick={onLiked}>
                 <LikeButtonInner>
-                    <img src="/assets/otoboto/like.svg"/>
+                    <FavoriteIcon sx={likedButtonStyle}/>
                     <FavoriteBorderIcon sx={{color: 'white', position: 'absolute', top: '5px', right: '5px', fontSize: '26px'}}/>
                 </LikeButtonInner>
             </LikeButton>
@@ -241,21 +302,13 @@ const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, 
                         <span>{year}</span>
                     </CarModel>
                     <Spacer width={'12px'}/> 
-                    <IndicatorBox>
-                        {true && indicators && indicators.find(indicator => indicator.code === 'SAFTEY') && 
-                            (<Indicator icon={<VerifiedUserOutlinedIcon/>} label={"בטיחותי"} color={"#79589F"}/>)}
-                    </IndicatorBox>
                 </Row>
                <Spacer height={spacing.spacing1}/>
                <Row>
                    <SubModel>
                         <span>{submodel}</span>
                    </SubModel>
-                   <Spacer width={'12px'}/> 
-                    <IndicatorBox>
-                       {false && indicators && indicators.find(indicator => indicator.code === 'POWERFULL') && 
-                            (<Indicator icon={<SettingsSuggestOutlinedIcon/>} label={"עוצמתי"} color={"#042759"}/>)}
-                    </IndicatorBox>                   
+                   <Spacer width={'12px'}/>                   
                </Row>
                <Usage>
                    <Hand>
@@ -266,10 +319,6 @@ const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, 
                    <Spacer width={'3px'}/>
                    <Millage>{computeMileageCaption(mileage)}</Millage>
                    <Spacer width={'10px'}/>
-                   <IndicatorBox>
-                       {false && indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && 
-                            (<Indicator icon={<img src={"/assets/otoboto/sparkling.png"}/>} label={"כמו חדש"} color={"#2bc48a"}/>)}
-                    </IndicatorBox>
                </Usage>
                
                <Location>
@@ -283,20 +332,56 @@ const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, 
                     <Spacer width={'10px'}/> 
                     {true && indicators && indicators.find(indicator => indicator.code === 'DOWN_PRICE') && (
                         <Downprice>
-                            <KeyboardDoubleArrowDownIcon fontSize={'small'} sx={{color: '#2bc48a'}}/>
-                            <span>14%</span>
+                            <KeyboardDoubleArrowDownIcon fontSize={'small'} sx={{color: colors.accent}}/>
+                            <span>{indicators.find(indicator => indicator.code === 'DOWN_PRICE').percentage}</span>
                         </Downprice> 
                     )}
                 </Row>
                 <Rank>
                     <Score>
-                        4.8
+                        <span>4.8</span>                             
                     </Score>
-                    <Spacer width={'10px'}/>
-                    <Insight>
-                        {indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && 
-                                (<Indicator icon={<img src={"/assets/otoboto/sparkling.png"}/>} label={"כמו חדש"} color={"#2bc48a"}/>)}
-                    </Insight>                         
+                    <Spacer width={'8px'}/>
+                    {true && indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && (
+                        <Insight>
+                            <InsightInner>
+                                <WorkspacePremiumIcon sx={{color: colors.accent, fontSize: '15px'}}/>                
+                                <div>כמו חדש</div>
+                            </InsightInner>   
+                        </Insight>   
+                    )} 
+                    {true && indicators && indicators.find(indicator => indicator.code === 'BEST_FOR_BABY') && (
+                        <Insight>
+                            <InsightInner>
+                                <ChildFriendlyIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                                <div>מושלם לתינוק</div>
+                            </InsightInner>   
+                        </Insight>   
+                    )}  
+                    {true && indicators && indicators.find(indicator => indicator.code === 'SAFTEY') && (
+                        <Insight>
+                            <InsightInner>
+                                <ShieldIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                                <div>בטיחותי</div>
+                            </InsightInner>   
+                        </Insight>   
+                    )}  
+                    {true && indicators && indicators.find(indicator => indicator.code === 'SPACE') && (
+                        <Insight>
+                            <InsightInner>
+                                <AirlineSeatReclineExtraIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                                <div>מרווח</div>
+                            </InsightInner>   
+                        </Insight>   
+                    )} 
+                    {true && indicators && indicators.find(indicator => indicator.code === 'FAMILY') && (
+                        <Insight>
+                            <InsightInner>
+                                <FamilyRestroomIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                                <div>לילדים</div>
+                            </InsightInner>   
+                        </Insight>   
+                    )}                                                                                                                                              
                 </Rank>                               
            </InfoSection>
         </Wrapper>

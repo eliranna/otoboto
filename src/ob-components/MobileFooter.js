@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import {useViewport, ViewportProvider} from '../ViewportProvider'
 
-import {fontSize, spacing} from '../ob-style'
+import {colors} from '../ob-style'
 
 import Spacer from './Spacer'
 
@@ -72,7 +72,7 @@ const NavItemTitle = styled.div`
 const MobileFooter = ({}) => {
 
     const { isMobile } = useViewport();
-    const iconStyle = (isActive) => { return isActive ? {color: 'rgb(255, 56, 92)'} : {color: 'rgb(176, 176, 176)'} }
+    const iconStyle = (isActive) => { return isActive ? {color: colors.accent} : {color: 'rgb(176, 176, 176)'} }
 
     return isMobile() ? (
         <Wrapper>

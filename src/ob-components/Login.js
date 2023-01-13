@@ -4,6 +4,8 @@ import styled from "styled-components/macro"
 import { maxWidth, padding, spacing } from '../ob-style'
 import { useViewport } from '../ViewportProvider'
 import Spacer from './Spacer';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GoogleIcon from '@mui/icons-material/Google';
 
 const Wrapper = styled.div`
 `;
@@ -117,7 +119,7 @@ const Login = () => {
                 <LoginButtons>
                     <LoginWithFB>
                         <LoginIcon>
-                            <img src="/assets/otoboto/facebook.svg"/>
+                            <FacebookIcon sx={{color: "#1978f2"}}/>
                         </LoginIcon>
                         <Spacer width={spacing.spacing2}/>
                         <LoginCaption>
@@ -127,7 +129,7 @@ const Login = () => {
                     <Spacer height={spacing.spacing4}/>
                     <LoginWithGoogle>
                         <LoginIcon>
-                            <img src="/assets/otoboto/google.svg"/>
+                            <GoogleIcon sx={{color: '#ea4435'}}/>
                         </LoginIcon>
                         <Spacer width={spacing.spacing2}/>
                         <LoginCaption>

@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from "styled-components/macro"
 
 import { maxWidth, breakpoints } from '../ob-style';
 import BubblePanel from './BubblePanel';
 import Login from './Login';
+import { useUserMenu } from '../hooks/userMenu';
+import { useStore, StoreProvider } from '../Store'
 
 const Wrapper = styled.div`
     background: transparent;
@@ -54,9 +56,10 @@ const UserMenuButton = styled.div`
 `
 
 
-const UserMenu = () => {
+const UserMenu = ({show}) => {
 
-    const [isUserMenuOpen, openUserMenu] = useState(false)
+    //const [isUserMenuOpen, openUserMenu] = useState(false)
+    const { userMenuOpened, openUserMenu } = useStore()
 
     return (
         <Wrapper>
@@ -68,7 +71,7 @@ const UserMenu = () => {
                     <img src="/assets/otoboto/user.svg"/>
                 </UserAvaterPanel>
             </UserMenuButton>
-            <BubblePanel show={isUserMenuOpen} width={"300px"} xloc={['38px','68px']} left={true} onClickOutside={() => openUserMenu(false)}>
+            <BubblePanel show={userMenuOpened} width={"300px"} xloc={['38px','68px']} left={true} onClickOutside={() => openUserMenu(false)}>
                 <Login/>
             </BubblePanel>
         </Wrapper>

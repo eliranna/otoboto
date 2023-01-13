@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
+import { colors } from '../ob-style'
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: '#FF385C',
+  color: colors.accent,
   height: 3,
   padding: '13px 0',
   userSelect: 'none',
