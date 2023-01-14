@@ -7,11 +7,11 @@ import { useViewport, ViewportProvider } from '../ViewportProvider'
 
 const MobileLogin = () => {
     
-    const { openUserMenu, userMenuOpened } = useStore()
+    const { isLoginModalOpen, openLoginModal } = useStore()
     const { isMobile } = useViewport();
 
-    return isMobile() && (
-        <SwipeableEdgeDrawer isOpen={userMenuOpened} onClose={() => openUserMenu(false)}>
+    return (
+        <SwipeableEdgeDrawer isOpen={isLoginModalOpen} onClose={() => openLoginModal(false)} anchor={isMobile() ? 'bottom' : 'right'}>
             <Login/>
         </SwipeableEdgeDrawer>
     )

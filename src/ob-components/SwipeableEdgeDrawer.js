@@ -24,10 +24,10 @@ const Inner = styled.div`
   padding: 32px 24px;
 `
 
-const SwipeableEdgeDrawer = ({children, isOpen, onOpen, onClose}) => {
+const SwipeableEdgeDrawer = ({children, isOpen, onOpen, onClose, anchor}) => {
     return (
       <SwipeableDrawer
-        anchor="bottom"
+        anchor={anchor}
         open={isOpen}
         onClose={onClose}
         onOpen={onOpen}

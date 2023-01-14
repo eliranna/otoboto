@@ -4,27 +4,18 @@ const storeContext = React.createContext({});
 
 const StoreProvider = ({ children }) => {
   const [userMenuOpened, openUserMenu] = useState(false);
-
-  //const handleWindowResize = () => {
-  //  setWidth(window.innerWidth);
-  //  setHeight(window.innerHeight);
-  //};
-
-  //React.useEffect(() => {
-  //  window.addEventListener("resize", handleWindowResize);
-  //  return () => window.removeEventListener("resize", handleWindowResize);
-  //}, []);
+  const [isLoginModalOpen, openLoginModal] = useState(false);
 
   return (
-    <storeContext.Provider value={{ userMenuOpened, openUserMenu }}>
+    <storeContext.Provider value={{ userMenuOpened, isLoginModalOpen, openUserMenu, openLoginModal }}>
       {children}
     </storeContext.Provider>
   );
 };
 
 const useStore = () => {
-  const { userMenuOpened, openUserMenu } = React.useContext(storeContext);
-  return { userMenuOpened, openUserMenu };
+  const { userMenuOpened, openUserMenu, isLoginModalOpen, openLoginModal } = React.useContext(storeContext);
+  return { userMenuOpened, openUserMenu, isLoginModalOpen, openLoginModal };
 };
 
 export {StoreProvider, useStore}

@@ -21,10 +21,10 @@ const EmptyBlock = () => {
 
 const Explore = ({cars, onLiked}) => {
 
-    const { openUserMenu } = useStore()
+    const { openLoginModal } = useStore()
 
     const handleLiked = () => {
-        openUserMenu(true)
+        openLoginModal(true)
     }
 
     let arr = cars;
