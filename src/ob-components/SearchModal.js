@@ -117,7 +117,7 @@ const FullButton = styled.div`
     transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
     -webkit-tap-highlight-color: transparent !important;
     border: none !important;
-    background: linear-gradient(to right, ${colors.accent} 0%, ${colors.accent} 50%, #00c3bf 100%) !important;
+    background: linear-gradient(to right, ${colors.accent} 0%, ${colors.accent} 50%, ${colors.accent} 100%) !important;
     color: rgb(255, 255, 255) !important;
     height: 46px;
 `

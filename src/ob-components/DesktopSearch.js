@@ -85,7 +85,7 @@ const SearchButton = styled.div`
     align-items: center;
     display: flex;
     :hover {
-        background-color: #00c5cc;
+        opacity: 0.9;
     }
     img {
         display: block;
