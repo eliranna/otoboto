@@ -9,8 +9,8 @@ const padding = {
 }
 
 const breakpoints = {
-    desktop: 'min-width: 950px',
-    tablet: 'min-width: 745px',
+    desktop: 1120,
+    tablet: 745
 }
 
 const spacing = {
@@ -44,7 +44,7 @@ const fontSize = {
 }
 
 const colors = {
-    accent: '#00ccad'
+    accent: '#0055FF'
 }
 
 export {

@@ -124,7 +124,7 @@ const Insight = styled.div`
     //background-color: white;
     //border: 1px solid ${colors.accent};
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 15px;
     //top: 45px;
     white-space: nowrap;
     font-weight: 700;
@@ -344,40 +344,35 @@ const CarCard = ({manifacturer, model, submodel, year, hand, mileage, location, 
                     <Spacer width={'8px'}/>
                     {true && indicators && indicators.find(indicator => indicator.code === 'AS_NEW') && (
                         <Insight>
-                            <InsightInner>
-                                <WorkspacePremiumIcon sx={{color: colors.accent, fontSize: '15px'}}/>                
+                            <InsightInner>               
                                 <div>כמו חדש</div>
                             </InsightInner>   
                         </Insight>   
                     )} 
                     {true && indicators && indicators.find(indicator => indicator.code === 'BEST_FOR_BABY') && (
                         <Insight>
-                            <InsightInner>
-                                <ChildFriendlyIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                            <InsightInner>              
                                 <div>מושלם לתינוק</div>
                             </InsightInner>   
                         </Insight>   
                     )}  
                     {true && indicators && indicators.find(indicator => indicator.code === 'SAFTEY') && (
                         <Insight>
-                            <InsightInner>
-                                <ShieldIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                            <InsightInner>               
                                 <div>בטיחותי</div>
                             </InsightInner>   
                         </Insight>   
                     )}  
                     {true && indicators && indicators.find(indicator => indicator.code === 'SPACE') && (
                         <Insight>
-                            <InsightInner>
-                                <AirlineSeatReclineExtraIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                            <InsightInner>               
                                 <div>מרווח</div>
                             </InsightInner>   
                         </Insight>   
                     )} 
                     {true && indicators && indicators.find(indicator => indicator.code === 'FAMILY') && (
                         <Insight>
-                            <InsightInner>
-                                <FamilyRestroomIcon sx={{color: colors.accent, fontSize: '15px', marginLeft: '3px'}}/>                
+                            <InsightInner>              
                                 <div>לילדים</div>
                             </InsightInner>   
                         </Insight>   

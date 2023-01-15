@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-import { maxWidth, padding, spacing, colors } from '../ob-style';
+import { maxWidth, padding, spacing, colors, breakpoints } from '../ob-style';
 import {useViewport} from '../ViewportProvider';
 
 import DesktopSearch from './DesktopSearch';
@@ -58,7 +58,7 @@ const SearchSection = styled.div`
     padding: 0 24px;
     display: flex; 
     justify-content: center;
-    @media (min-width: 950px) {
+    @media (min-width: ${breakpoints.desktop}) {
         position: absolute;
         right: 0;
         left: 0;

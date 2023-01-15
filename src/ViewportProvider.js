@@ -1,4 +1,5 @@
 import React from "react";
+import { breakpoints } from "./ob-style"
 
 const viewportContext = React.createContext({});
 
@@ -24,8 +25,8 @@ const ViewportProvider = ({ children }) => {
 
 const useViewport = () => {
   const { width, height } = React.useContext(viewportContext);
-  const isDesktop = () => width >= 950;
-  const isTablet = () => !isDesktop() && width >= 745;
+  const isDesktop = () => width >= breakpoints.desktop;
+  const isTablet = () => !isDesktop() && width >= breakpoints.tablet;
   const isMobile = () => !isDesktop() && !isTablet();
   return { isDesktop, isTablet, isMobile };
 };
